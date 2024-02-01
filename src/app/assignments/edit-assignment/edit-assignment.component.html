@@ -1,0 +1,46 @@
+<div class="container" *ngIf="assignment">
+  <mat-card>
+    <mat-card-header>
+      <p>Assignement n° {{assignment.id}}</p>
+    </mat-card-header>
+    <hr>
+    <form class="container2"ngForm #formupdate (submit)="onSaveAssignment(); formupdate.reset(); ">
+      <mat-form-field>
+        <input matInput placeholder="Nom" [(ngModel)]="nomAssignment" name="assignment-name">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Date" [(ngModel)]="dateDeRendu" name="date">
+        <mat-datepicker-toggle matSuffix [for]="picker">
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <hr>
+      <mat-form-field>
+        <input matInput placeholder="Matière" [(ngModel)]="matiereAssignment" name="assignment-matiere">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Professeur" [(ngModel)]="profAssignment" name="assignment-prof">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Auteur" [(ngModel)]="auteurAssignment" name="assignment-auteur">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="number" placeholder="Note" [(ngModel)]="noteAssignment" name="assignment-note">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Remarque" [(ngModel)]="remarqueAssignment" name="assignment-remarque">
+      </mat-form-field>
+    <button mat-raised-button color="primary" [disabled]="((!nomAssignment)||(!dateDeRendu))">
+      SAUVER
+    </button>
+    </form>
+    <nav><a routerLink="/assignment/{{assignment.id}}">
+      <button mat-stroked-button
+              color="primary"
+              type="submit"
+      >
+      RETOUR
+    </button>
+     </a></nav>
+  </mat-card>
+</div>

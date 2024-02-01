@@ -1,0 +1,49 @@
+
+<div class="container">
+<mat-stepper class="stepper">
+  <mat-step label="Étape 1">
+    <!-- Contenu de la première étape -->
+    <form #stepOneForm="ngForm" (ngSubmit)="onStepOneSubmit()">
+      <mat-form-field>
+        <input matInput [(ngModel)]="nomDevoir" name="nom" placeholder="Nom du devoir" required>
+      </mat-form-field>
+      <!-- Autres champs pour la première étape -->
+      <button mat-button matStepperNext>Étape suivante</button>
+    </form>
+  </mat-step>
+  <!-- Étape 2 -->
+  <mat-step label="Étape 2: Matière">
+    <!-- Contenu de la deuxième étape -->
+    <form #stepTwoForm="ngForm" (ngSubmit)="onStepTwoSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>Matière du rendu</mat-label>
+        <mat-select [(ngModel)]="matiere" name="matiere">
+          <mat-option *ngFor="let matiere of matiereRendu" [value]="matiere">
+            {{ matiere }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="buttonContainer">
+      <button mat-button matStepperPrevious>Étape précédente</button>
+      <button mat-button matStepperNext>Étape suivante</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <!-- Étape 3 -->
+  <mat-step label="Étape 3: Date de rendu">
+    <!-- Contenu de la troisième étape -->
+    <form #stepThreeForm="ngForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <input matInput [matDatepicker]="picker" placeholder="Date de rendu" [(ngModel)]="dateDeRendu" name="date" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <<div class="buttonContainer">
+      <button mat-button matStepperPrevious>Étape précédente</button>
+      <button mat-button matStepperNext>Envoyer le travail</button>
+    </div>
+    </form>
+  </mat-step>
+</mat-stepper>
+</div>

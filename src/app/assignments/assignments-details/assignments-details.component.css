@@ -1,0 +1,243 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 100%;
+
+
+}
+
+
+
+
+.matCard {
+  display: flex;
+  flex-direction: column; /* Organiser le contenu de la carte en colonne */
+  justify-content: space-between;
+  width: 60%;
+  height: 60%;
+  margin: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+align-items: stretch;
+  background: #f5f5f5;
+
+  padding: 1.8rem;
+  border: 2px solid #c3c6ce;
+  transition: 0.5s ease-out;
+
+}
+
+mat-card:hover {
+  border-color: #008bf8;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+mat-card-header {
+
+
+  color: #ccdeff;
+  border-top-left-radius: 15px; /* Arrondir les bords en haut de la carte */
+  border-top-right-radius: 15px;
+}
+.titreCard{
+  font-size: 40px;
+
+}
+.subtitreCard{
+  margin: 10px;
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-weight: 900;
+  margin: 5px;
+  color: rgb(16, 137, 211);
+}
+
+/*.prof-photo img {*/
+/*  width: 60px;*/
+/*  height: 60px;*/
+/*  border-radius: 50%;*/
+/*  margin-right: 15px;*/
+/*  border: 3px solid white;*/
+/*  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);*/
+/*}*/
+
+mat-card-title {
+  font-size: 100px;
+  color: #0056b3;
+  margin-top: 5px;
+}
+
+
+mat-card-subtitle {
+  font-size: 18px;
+  color: #1565c0; /* Nuance de bleu plus foncée */
+}
+
+
+
+mat-card-content {
+flex-grow: 1;
+  overflow-y: auto;
+  font-size: 16px;
+  height:auto;
+}
+
+  .details {
+  display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    display: flex;
+    height: 30%;
+    gap: 10px;
+  }
+
+
+.detail {
+height: 40px;
+  margin-bottom: 10px; /* Espacement entre les détails */
+  display: inline-block; /* Pour permettre l'application de la marge */
+}
+
+
+
+
+
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+
+button {
+  margin-left: 10px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #0056b3; /* Bleu au survol */
+  color: white;
+}
+
+
+.cardContent{
+  align-content: stretch;
+  display: flex;
+    flex-direction: column; /* Changer la direction pour la colonne */
+    align-items: stretch;
+}
+
+
+
+mat-card:hover {
+  border-color: #008bf8;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+mat-card-header {
+
+
+  color: #ccdeff;
+  border-top-left-radius: 15px; /* Arrondir les bords en haut de la carte */
+  border-top-right-radius: 15px;
+}
+.titreCard{
+  font-size: 40px;
+
+}
+.subtitreCard{
+  margin: 10px;
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-weight: 900;
+  margin: 5px;
+  color: rgb(16, 137, 211);
+}
+
+/*.prof-photo img {*/
+/*  width: 60px;*/
+/*  height: 60px;*/
+/*  border-radius: 50%;*/
+/*  margin-right: 15px;*/
+/*  border: 3px solid white;*/
+/*  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);*/
+/*}*/
+
+mat-card-title {
+  font-size: 100px;
+  color: #0056b3;
+  margin-top: 5px;
+}
+
+
+mat-card-subtitle {
+  font-size: 18px;
+  color: #1565c0; /* Nuance de bleu plus foncée */
+}
+
+
+
+mat-card-content {
+  font-size: 16px;
+}
+
+
+
+
+
+select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+select:hover {
+  border-color: #1976d2;
+}
+
+
+
+button {
+  margin-left: 10px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #0056b3; /* Bleu au survol */
+  color: white;
+}
+
+
+.nomDetail {
+  color: white; /* Police blanche */
+  background-color: #0d47a1; /* Fond bleu */
+  padding: 5px 10px; /* Espacement autour du texte */
+  border-radius: 5px; /* Bords arrondis */
+  font-size: 1.2em; /* Taille de police plus grande */
+}
+
+.contentDetail {
+  color: #0d47a1; /* Police bleu foncé */
+
+  padding: 10px 10px; /* Espacement autour du texte */
+  border-radius: 5px; /* Bords arrondis */
+  font-size: 1em; /* Taille de police standard */
+}
+
+.detail {
+  display: flex; /* Utiliser flex pour aligner nomDetail et contentDetail */
+
+  gap: 10px; /* Espacement entre nomDetail et contentDetail */
+  margin-bottom: 10px; /* Espacement entre les détails */
+}

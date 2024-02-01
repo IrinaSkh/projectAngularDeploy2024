@@ -1,0 +1,56 @@
+<div class="container">
+  <mat-card *ngIf="assignmentTransmis" class="matCard">
+    <mat-card-header>
+      <div class="header-content">
+
+        <div>
+          <mat-card-title class="titreCard">{{assignmentTransmis.nom}}</mat-card-title>
+          <mat-card-subtitle class="subtitreCard">Date de rendu: {{assignmentTransmis.dateDeRendu | date}}</mat-card-subtitle>
+        </div>
+      </div>
+    </mat-card-header>
+
+    <mat-card-content class="cardContent">
+<!--      <div class="details">-->
+
+          <div class="detail"><span class="nomDetail">Matière: </span>
+            <span class="contentDetail">{{assignmentTransmis.matiere}}</span>
+          </div>
+      <div class="detail"><span class="nomDetail">Devoir Rendu: </span>
+        <span class="contentDetail"><mat-checkbox  [disabled]="!isAdmin() &&  !isUser()"(click)="onAssignmentRendu()">
+              Rendre le devoir
+            </mat-checkbox></span>
+      </div>
+<!--      <mat-checkbox  *ngIf="!assignmentTransmis.rendu && !isUser" (click)="onAssignmentRendu()">-->
+<!--        Devoir Rendu-->
+<!--      </mat-checkbox>-->
+
+
+        <div class="detail"><span class="nomDetail">Professeur: </span>
+          <span class="contentDetail">{{assignmentTransmis.prof}}</span>
+        </div>
+        <div class="prof-photo">
+          <!--          <img [src]="assignmentTransmis.photoProf" alt="Photo du Professeur">-->
+        </div>
+<!--        <div class="detail"><span>Auteur: {{assignmentTransmis.auteur}}</span></div>-->
+        <div class="detail"><span class="nomDetail">Note: </span>
+          <span class="contentDetail">{{assignmentTransmis.note}}/20</span>
+        </div>
+
+        <div class="detail"><span class="nomDetail">Remarque:</span>
+          <span class="contentDetail" id="remarque">{{assignmentTransmis.remarque}}</span>
+        </div>
+<!--      </div>-->
+    </mat-card-content>
+
+    <div class="card-actions">
+      <button mat-stroked-button color="primary" [routerLink]="'/assignment/' + assignmentTransmis.id + '/edit'" [disabled]="!isUser()">
+        MODIFIER
+      </button>
+      <button mat-flat-button color="warn" (click)="onDelete()" [disabled]="!isAdmin()">
+        SUPPRIMER
+      </button>
+    </div>
+  </mat-card>
+</div>
+

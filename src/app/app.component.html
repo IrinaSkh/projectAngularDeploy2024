@@ -1,0 +1,76 @@
+<!-- navbar.component.html -->
+<div class="content">
+<div class="toolbar">
+<mat-toolbar color="primary" class="fixed-toolbar">
+  <button mat-icon-button (click)="toggleDrawer()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <button mat-icon-button routerLink="/home">
+    <mat-icon>home</mat-icon>
+  </button>
+  <span class="spacer"></span>
+  <span class="spacer"></span>
+
+  <span>Application de gestion de rendus</span>
+  <form (submit)="login()" *ngIf="!authService.loggedIn" class="form">
+    <label>Identifiant:
+      <input type="text" [(ngModel)]="identifiant" name="identifiant">
+    </label>
+    <label style="margin-left: 5px;">Mot de passe:
+      <input type="password" [(ngModel)]="motdepasse" name="motdepasse">
+    </label>
+    <button type="submit" style="margin-left: 5px;">Connexion</button>
+  </form>
+  <p *ngIf="authService.loggedIn" class="text">Connecté en tant que {{authService.userName}} ({{authService.userRole}})</p>
+  <button (click)="logout()" *ngIf="authService.loggedIn" class="button2">Déconnexion</button>
+</mat-toolbar>
+</div>
+<div class="drawer">
+
+<mat-drawer-container class="matContainer">
+
+
+
+  <mat-drawer position="start" #drawer mode="over">
+        <mat-nav-list>
+          <a mat-list-item routerLink="/home">Liste des devoirs</a>
+          <a mat-list-item (click)="authService.loggedIn ? router.navigate(['/add']) : openLoginDialog()">Ajout d'un devoir</a>
+          <a mat-list-item (click)="authService.loggedIn ? peuplerDB() : openLoginDialog()">Génération de données de test</a>
+        </mat-nav-list>
+  </mat-drawer>
+    <mat-drawer-content class="matContainerContent">
+      <router-outlet>
+
+      </router-outlet>
+
+    </mat-drawer-content>
+
+
+
+</mat-drawer-container>
+</div>
+</div>
+<!--<main class="mainContainer">-->
+<!--<mat-drawer-container>-->
+<!--  <mat-drawer position="start" #drawer mode="over">-->
+<!--    <mat-nav-list>-->
+<!--      <a mat-list-item routerLink="/liste-devoirs">Liste des devoirs</a>-->
+<!--      <a mat-list-item (click)="authService.loggedIn ? router.navigate(['/add']) : openLoginDialog()">Ajout d'un devoir</a>-->
+<!--      &lt;!&ndash; Répétez pour les autres liens &ndash;&gt;-->
+
+<!--      <a mat-list-item routerLink="/edit">Modification d'un devoir</a>-->
+
+<!--      <a mat-list-item (click)="authService.loggedIn ? peuplerDB() : openLoginDialog()">Génération de données de test</a>-->
+<!--    </mat-nav-list>-->
+<!--  </mat-drawer>-->
+
+
+<!--  <mat-drawer-content>-->
+<!--    <router-outlet>-->
+
+<!--    </router-outlet>-->
+
+<!--  </mat-drawer-content>-->
+
+<!--</mat-drawer-container>-->
+<!--</main>-->

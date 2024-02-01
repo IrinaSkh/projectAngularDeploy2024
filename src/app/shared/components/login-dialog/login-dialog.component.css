@@ -1,0 +1,30 @@
+/* Styles pour le titre de la boîte de dialogue */
+mat-dialog-title {
+  color: #1976d2; /* Couleur bleue pour le titre */
+  font-size: 24px;
+}
+
+/* Styles pour le contenu de la boîte de dialogue */
+mat-dialog-content {
+  font-size: 16px;
+  color: #333; /* Couleur foncée pour le texte */
+  margin-top: 20px; /* Espace au-dessus du contenu */
+}
+
+/* Styles pour les boutons d'action */
+mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end; /* Alignement des boutons à droite */
+  margin-top: 30px; /* Espace au-dessus des boutons */
+}
+
+/* Style pour les boutons dans la boîte de dialogue */
+button.mat-button {
+  color: #1976d2; /* Couleur bleue pour les boutons */
+  margin-left: 10px; /* Espace entre les boutons */
+}
+
+/* Style au survol pour les boutons */
+button.mat-button:hover {
+  background-color: #e3f2fd; /* Légère couleur de fond au survol */
+}
